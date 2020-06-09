@@ -4,6 +4,7 @@ phases:
     pre_build:
         commands:
             - cd frontend/movies_app
+            - npm install
             - echo Finished installing web dependencies
     build:
         commands:
