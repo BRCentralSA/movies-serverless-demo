@@ -17,6 +17,5 @@ phases:
         commands:
             - echo Finished build with success
 artifacts:
-    baseDirectory: frontend/movies_app/dist
     files:
-        - '**/*'
+        - 'frontend/movies_app/dist/*'
