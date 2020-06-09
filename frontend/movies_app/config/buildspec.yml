@@ -1,0 +1,16 @@
+version: 0.1
+
+phases:
+    pre_build:
+        commands:
+            - npm ci
+    build:
+        commands:
+            - npm run build
+    post_build:
+        commands:
+            - echo success
+artifacts:
+    baseDirectory: dist
+    files:
+        - '**/*'
