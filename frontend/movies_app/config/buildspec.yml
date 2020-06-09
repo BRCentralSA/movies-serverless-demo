@@ -3,13 +3,16 @@ version: 0.1
 phases:
     pre_build:
         commands:
+            - cd frontend
             - npm ci
+            - echo Finished installing web dependencies
     build:
         commands:
+            - echo Started Build
             - npm run build
     post_build:
         commands:
-            - echo success
+            - echo Finished build with success
 artifacts:
     baseDirectory: dist
     files:
