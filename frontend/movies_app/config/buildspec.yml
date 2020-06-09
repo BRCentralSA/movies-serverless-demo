@@ -3,7 +3,7 @@ version: 0.1
 phases:
     pre_build:
         commands:
-            - cd frontend
+            - cd frontend/movies_app
             - npm ci
             - echo Finished installing web dependencies
     build:
