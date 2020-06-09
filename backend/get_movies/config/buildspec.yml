@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+  pre_build:
+    commands:
+      - cd backend/get_movies
+      - mkdir package
+      - pip install -r requirements.txt -t package/
+      - echo Finished installing dependencies
+  build:
+    commands:
+      - echo Started Build
+      - mv config/appspec.yml .
+      - cd package
+      - zip -r ../lambda_package.zip .
+  post_build:
+    commands:
+      - echo Finished build with success
+artifacts:
+  files:
+    - "lambda_package.zip"
+  base-directory: backend/get_movies
